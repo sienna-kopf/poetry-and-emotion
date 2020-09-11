@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+
+<% @poems.each do |poem_info| %>
+  <section class="poem_info">
+    <h4 class="title">
+      Title: <%= poem_info.title %>
+    </h4>
+    <h5 class="author">
+      Author: <%= poem_info.author %>
+    </h5>
+    <p class="poem">
+      <%= poem_info.text %>
+    </p>
+    <ul class="tones">
+      <% @tones.each do |tone| %>
+        <li><p><%= tone %></p></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+<%= link_to "Search Another Author", "/" %>

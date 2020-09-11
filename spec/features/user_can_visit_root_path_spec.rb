@@ -8,4 +8,18 @@ describe "User can visit root path" do
     expect(page).to have_content('Welcome to Poetry and Emotion')
     expect(page).to have_selector('input')
   end
+
+  it "to use a search form to get 10 poems for a particular author" do
+    visit '/'
+    within ".search" do
+      fill_in :author, with: "Emily"
+      click_on "Get Poems"
+    end
+
+    expect(current_path).to eq(search_path)
+    expect(page).to have_css(".author", count: 10)
+    expect(page).to have_css(".title", count: 10)
+    expect(page).to have_css(".poem", count: 10)
+    expect(page).to have_css(".tones", count: 10)
+  end
 end

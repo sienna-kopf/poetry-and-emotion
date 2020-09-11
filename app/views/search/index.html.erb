@@ -12,7 +12,7 @@
       <%= poem_info.text %>
     </p>
     <ul class="tones">
-      <% @tones.each do |tone| %>
+      <% ToneFacade.new(poem_info.text).search_tone.each do |tone| %>
         <li><p><%= tone %></p></li>
       <% end %>
     </ul>

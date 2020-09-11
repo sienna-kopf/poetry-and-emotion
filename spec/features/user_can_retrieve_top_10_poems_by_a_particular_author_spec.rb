@@ -14,19 +14,19 @@ describe "User can get 10 poems for a particular author" do
       expect(page).to have_css(".title")
       title = find('.title').text
       expect(title).not_to be_empty
-      expect(title).to eq("Not at Home to Callers")
+      expect(title).to eq("Title: Not at Home to Callers")
 
       expect(page).to have_css(".author")
       author = find('.author').text
       expect(author).not_to be_empty
-      expect(author).to eq("Emily Dickinson")
+      expect(author).to eq("Author: Emily Dickinson")
 
       expect(page).to have_css(".poem")
       poem = find('.poem').text
       expect(poem).not_to be_empty
       expect(poem).to eq("Not at Home to Callers Says the Naked Tree -- Bonnet due in April -- Wishing you Good Day --")
 
-      expect(tones).to have_css(".tones")
+      expect(page).to have_css(".tones")
     end
   end
 end

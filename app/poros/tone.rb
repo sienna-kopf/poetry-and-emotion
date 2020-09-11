@@ -9,6 +9,6 @@ class Tone
   def tones
     @tone_list.map do |tone|
       @tones << tone[:tone_name]
-    end.flatten
+    end.flatten.uniq
   end
 end

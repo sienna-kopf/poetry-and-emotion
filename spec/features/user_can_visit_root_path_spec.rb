@@ -16,10 +16,7 @@ describe "User can visit root path" do
     click_on "Get Poems"
 
     expect(current_path).to eq(search_path)
-    expect(page).to have_css(".author", count: 10)
-    expect(page).to have_css(".title", count: 10)
-    expect(page).to have_css(".poem", count: 10)
-    expect(page).to have_css(".tones", count: 10)
+    expect(page).to have_css(".poem_info", count: 10)
 
     expect(page).to have_link("Search Another Author")
     click_on "Search Another Author"
